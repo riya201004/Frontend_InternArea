@@ -1,0 +1,60 @@
+{
+  "name": "clint",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "https://internareabackend-8qdv.onrender.com/api",
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.1.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.6.7",
+    "bootstrap-icons": "^1.11.3",
+    "firebase": "^10.12.2",
+    "firebaseui": "^6.1.0",
+    "i18next": "^23.11.5",
+    "i18next-browser-languagedetector": "^8.0.0",
+    "i18next-http-backend": "^2.5.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^14.1.2",
+    "react-icons": "^5.0.1",
+    "react-modal": "^3.16.1",
+    "react-otp-input": "^3.1.1",
+    "react-phone-input-2": "^2.15.1",
+    "react-redux": "^9.1.0",
+    "react-router-dom": "^6.21.3",
+    "react-scripts": "^5.0.1",
+    "react-toastify": "^10.0.4",
+    "redux": "^5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.6.0",
+    "tailwindcss": "^3.4.1"
+  }
+}

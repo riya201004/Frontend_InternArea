@@ -1,0 +1,15 @@
+body.hi{
+    background-color: lightblue;
+}
+
+body.zh{
+    background-color: lightgreen;
+}
+
+body.fr{
+    background-color: rgb(250, 250, 154);
+}
+
+body.en, body.es, body.pt{
+    background-color: white;
+}
