@@ -17,12 +17,13 @@ function UserApplicatiom() {
     useEffect(()=>{
         const fetchApplication= async()=>{
         try {
-            const response=await axios.get("https://internareabackend-8qdv.onrender.com/api/application")
+            const response=await axios.get("https://internshipbackend-vwja.onrender.com/api/application")
             const translatedApplications = response.data.map(app => ({
               ...app,
               category: t(`application.${app.category}`),
               status: t(`application.${app.status}`),
           }));
+          console.log('Translated Applications:', translatedApplications); // Add this line to log translated applications
 setApplication(response.data)
 
         } catch (error) {
@@ -32,7 +33,7 @@ setApplication(response.data)
         }
         fetchApplication()
         
-    },[i18n.language])
+    },[i18n.language, t])
 console.log(application)
   return (
     <div>

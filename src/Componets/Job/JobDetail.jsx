@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Jobs from "../Data/JobsDataAvl"
+//import Jobs from "../Data/JobsDataAvl"
 import { selectUser } from '../../Feature/Userslice'
 import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
@@ -23,7 +23,7 @@ const id=params.get("q")
   const [data,setData] =useState([])
 useEffect(()=>{
    const fetchData= async()=>{
-  const response=await axios.get(`https://internareabackend-8qdv.onrender.com/api/job/${id}`)
+  const response=await axios.get(`https://internshipbackend-vwja.onrender.com/api/job/${id}`)
   
   const {company,category}=response.data;
   setCompany(company)

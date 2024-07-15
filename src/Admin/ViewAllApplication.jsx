@@ -27,7 +27,7 @@ function ViewAllApplication() {
 
         }
         fetchApplication();
-    },[i18n.language])
+    },[i18n.language, t])
 console.log(application)
   return (
     <div>

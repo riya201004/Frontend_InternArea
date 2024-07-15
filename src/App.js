@@ -8,8 +8,8 @@ import Intern from "./Componets/Internships/Intern"
 import JobAvl from "./Componets/Job/JobAvl"
 import JobDetail from './Componets/Job/JobDetail';
 import InternDeatil from "./Componets/Internships/InternDeatil"
-import { useDispatch, useSelector } from 'react-redux';
-import { login,logout,selectUser } from "./Feature/Userslice"
+import { useDispatch } from 'react-redux';
+import { login,logout } from "./Feature/Userslice"
 import { useEffect } from 'react';
 import { auth } from './firebase/firebase';
 import { Suspense } from 'react';
@@ -25,7 +25,7 @@ import LoginHistory from './profile/loginHistory';
 import UserapplicationDetail from "./Applications/DeatilApplicationUser"
 import LanguageSwitcher from './i18/LanguageSwitcher';
 function App() {
-  const user=useSelector(selectUser);
+  // const user=useSelector(selectUser);
   const dispatch=useDispatch();
   useEffect(() => {
     auth.onAuthStateChanged((authUser)=>{

@@ -48,6 +48,10 @@ const EmailOTP = ({ onOTPVerified }) => {
             });
     };
 
+    // Log emailSent to console
+    console.log('emailSent:', emailSent);
+
+
     return (
         <div>
             <input

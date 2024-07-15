@@ -5,7 +5,7 @@ function LoginHistory() {
     const [loginHistory, setLoginHistory] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/login-history')
+        axios.get('https://internareabackend-8qdv.onrender.com/login-history')
             .then(response => {
                 setLoginHistory(response.data);
             })

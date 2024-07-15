@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import "./job.css"
 import compLogo from "../../Assets/netflix.png"
 import axios from 'axios';
@@ -16,7 +16,7 @@ function JobAvl() {
   useEffect(()=>{
     const fetchData= async()=>{
         try {
-        const response= await axios.get(`https://internareabackend-8qdv.onrender.com/api/job`)
+        const response= await axios.get(`https://internshipbackend-vwja.onrender.com/api/job`)
         setJobData(response.data)
     } catch (error) {
           console.log(error) 
@@ -42,19 +42,18 @@ function JobAvl() {
       setSearchLocation(loactionValue);
       setFilterJob([serachCategory,loactionValue])
     }
-  const filterJobs=(category,location)=>{
-    const filterData=jobData.filter(
-      (Job)=>
-      Job.category.toLowerCase().includes(category.toLowerCase())&&
-      Job.location.toLowerCase().includes(location.toLowerCase())
-      )
-      setFilterJob(filterData)
-  }
-  useEffect(()=>{
-
-    filterJobs(serachCategory,searchLoaction);
-
-  },[searchLoaction,serachCategory])
+    const filterJobs = useCallback((category, location) => {
+      const filterData = jobData.filter(
+        (job) =>
+          job.category.toLowerCase().includes(category.toLowerCase()) &&
+          job.location.toLowerCase().includes(location.toLowerCase())
+      );
+      setFilterJob(filterData);
+    }, [jobData]);
+  
+    useEffect(() => {
+      filterJobs(serachCategory, searchLoaction);
+    }, [searchLoaction, serachCategory, filterJobs]);
 
 
   

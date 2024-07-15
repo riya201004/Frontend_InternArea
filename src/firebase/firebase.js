@@ -23,4 +23,4 @@ const analytics = getAnalytics(app);
 const auth=getAuth(app);
 const provider=new GoogleAuthProvider();
 
-export { auth, provider, app, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendEmailVerification, sendSignInLinkToEmail, isSignInWithEmailLink, signInWithEmailLink, RecaptchaVerifier, signInWithPhoneNumber }
+export { auth, provider, app, analytics, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendEmailVerification, sendSignInLinkToEmail, isSignInWithEmailLink, signInWithEmailLink, RecaptchaVerifier, signInWithPhoneNumber }

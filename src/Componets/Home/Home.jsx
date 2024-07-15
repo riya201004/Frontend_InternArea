@@ -18,7 +18,7 @@ const [internshipData,setInternshipData]=useState([])
 useEffect(()=>{
     const fetchData= async()=>{
         try {
-        const response= await axios.get(`https://internareabackend-8qdv.onrender.com/api/internship`)
+        const response= await axios.get(`https://internshipbackend-vwja.onrender.com/api/internship`)
         setInternshipData(response.data)
     } catch (error) {
            console.log(error) 
@@ -173,10 +173,15 @@ filterInternShips.map(( data,index)=>(
                    </svg>
                </div>
                <p class="px-4 py-1 text-center text-sm text-gray-600 font-bold ">{t('register.signInWithGoogle')}</p>
-  </a>
-  <a to="/register">
-    <button className='btn6 '> {t('navbar.registerButton')}</button></a>
+</a>
+<Link to={"/register"}>
+    <button className='btn6 '> {t('navbar.registerButton')}</button>
+</Link>
     </div>
+
+    <div>
+                <p>slide: {currentSlide}</p>
+            </div>
 </div>
     </>
   )

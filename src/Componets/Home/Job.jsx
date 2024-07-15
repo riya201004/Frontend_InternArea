@@ -14,7 +14,7 @@ function Job() {
     useEffect(()=>{
         const fetchData= async()=>{
             try {
-            const response= await axios.get(`https://internareabackend-8qdv.onrender.com/api/job`)
+            const response= await axios.get(`https://internshipbackend-vwja.onrender.com/api/job`)
             setJobData(response.data)
         } catch (error) {
                console.log(error) 
@@ -95,6 +95,7 @@ filterInternShips.map(( data,index)=>(
 <div className="flex BUttons mt-9">
 <button className='back' onClick={()=>handleJob('left')}> <i className='bi bi-chevron-left' id='sideBack'></i></button>
 <button  className="next" onClick={()=>handleJob('right')}> <i className='bi bi-chevron-right' id='slide'></i></button>
+<p>{currentSlide}</p>
 </div>
     </div>
   

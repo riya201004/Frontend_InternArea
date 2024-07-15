@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import "./inter.css";
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../../i18/LanguageSwitcher';
@@ -25,7 +25,7 @@ function Intern() {
     useEffect(()=>{
       const fetchData= async()=>{
           try {
-          const response= await axios.get(`https://internareabackend-8qdv.onrender.com/api/internship`)
+          const response= await axios.get(`https://internshipbackend-vwja.onrender.com/api/internship`)
           setInternData(response.data)
           console.log(response.data)
       } catch (error) {
@@ -47,21 +47,19 @@ function Intern() {
       setSearchLocation(loactionValue);
       setFilterInternship([serachCategory,loactionValue])
     }
-    const filterInterships = (category, location) => {
+    const filterInternships = useCallback((category, location) => {
       if (InternData && InternData.length > 0) {
-      
-          const filterData = InternData.filter(
-            (internship) =>
-              internship.category.toLowerCase().includes(category.toLowerCase()) &&
-              internship.location.toLowerCase().includes(location.toLowerCase())
-          );
-          setFilterInternship(filterData);
-        
+        const filterData = InternData.filter(
+          (internship) =>
+            internship.category.toLowerCase().includes(category.toLowerCase()) &&
+            internship.location.toLowerCase().includes(location.toLowerCase())
+        );
+        setFilterInternship(filterData);
       }
-    };
+    }, [InternData]);
     useEffect(() => {
-      filterInterships(serachCategory, searchLoaction);
-    }, [searchLoaction, serachCategory]);
+      filterInternships(serachCategory, searchLoaction);
+    }, [searchLoaction, serachCategory,filterInternships]);
   console.log(filterInternship)
 
   

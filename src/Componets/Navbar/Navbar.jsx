@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import logo from '../../Assets/logo.png'
 import { Link } from 'react-router-dom'
-import { useTranslation, initReactI18next } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from  '../../i18/LanguageSwitcher';
 import "./navbar.css"
 import Sidebar from './Sidebar'
 import { signInWithPopup, signOut } from 'firebase/auth'
 import { auth, provider } from '../../firebase/firebase'
-import  {uiConfig}  from '../../firebase/firebaseuiConfig'
+//import  {uiConfig}  from '../../firebase/firebaseuiConfig'
 import  {initializeFirebaseUI}  from '../../firebase/firebaseuiConfig';
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../Feature/Userslice'
@@ -136,7 +136,7 @@ function Navbar() {
                     ipAddress: '127.0.0.1' // Replace with actual IP address retrieval logic if needed
                 };
                 // Make a POST request to save login history
-                axios.post('http://localhost:5000/api/login-history', loginData)
+                axios.post('https://internareabackend-8qdv.onrender.com/api/login-history', loginData)
                     .then((response) => {
                         console.log('Login history saved:', response.data);
                         // Handle any further actions or state updates upon successful POST request

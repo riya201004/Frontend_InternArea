@@ -55,7 +55,7 @@ function PostJob() {
           AdditionalInfo:additionalInfo,
   
       }
-  axios.post("https://internareabackend-8qdv.onrender.com/api/job",bodyJosn).then((res)=>{
+  axios.post("https://internshipbackend-vwja.onrender.com/api/job",bodyJosn).then((res)=>{
       console.log(res.data)
     }).catch((err)=>
     console.log(err))

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Intern from "../Data/InternshipDatAvl"
+//import Intern from "../Data/InternshipDatAvl"
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../Feature/Userslice'
@@ -28,7 +28,7 @@ const hide=()=>{
 const [data,setData] =useState([])
 useEffect(()=>{
    const fetchData= async()=>{
-  const response=await axios.get(`https://internareabackend-8qdv.onrender.com/api/internship/${id}`)
+  const response=await axios.get(`https://internshipbackend-vwja.onrender.com/api/internship/${id}`)
   setData(response.data)
 
   const {company,category}=response.data;
@@ -52,7 +52,7 @@ const submitApplication= async()=>{
         Application:id
       }
     
-      await axios.post("https://internareabackend-8qdv.onrender.com/api/application",bodyJson).then((res)=>{
+      await axios.post("https://internshipbackend-vwja.onrender.com/api/application",bodyJson).then((res)=>{
   
   
         
@@ -135,7 +135,7 @@ const submitApplication= async()=>{
       </div>
       {isDivVisible &&(
   <>
-  <div className="application-page bg-inherit">
+  <div className="application-page bg-white">
     <div className="bg">
       <button className='close2' onClick={hide} ><i className='bi-bi-x'></i> {t('details.closeButton')}</button>
       <p>{t('details.applyFor')}  {data.company}</p>
